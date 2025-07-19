@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoViz - Data Structures & Algorithms Visualizer</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">AlgoViz</a>
+        <div class="nav-links">
+            <a href="#" id="home-link" class="active">Home</a>
+            <a href="#" id="algorithms-link">Algorithms & DS</a>
+        </div>
+    </nav>
+
+    <div id="home-page" class="page active">
+        <section class="hero">
+            <h1>Visualize Data Structures & Algorithms</h1>
+            <p>Explore and understand how various data structures and algorithms work step-by-step.</p>
+            <button class="cta-button" id="explore-algorithms">Explore Visualizations</button>
+        </section>
+        <section class="algorithm-list">
+            <h2>Sorting Algorithms</h2>
+            <div class="algorithm-card" data-algo="bubbleSort">
+                <h3>Bubble Sort</h3>
+                <p>Compares adjacent elements and repeatedly swaps the adjacent elements if they are in wrong order.</p>
+                <p>Approach: Repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.</p>
+                <p>Analogy: Bubbles rising to the surface (largest/smallest elements "bubble" to their correct position). </p>
+            </div>
+            <div class="algorithm-card" data-algo="selectionSort">
+                <h3>Selection Sort</h3>
+                <p>Finds the minimum element from the unsorted part and puts it at the beginning.</p>
+                <p>Approach: Divides the input list into two parts: a sorted sublist and an unsorted sublist. It repeatedly finds the minimum (or maximum) element from the unsorted sublist and swaps it with the leftmost unsorted element, moving it to the sorted sublist.</p>
+                <p>Analogy: Picking the smallest item from a pile and placing it at the beginning.</p>
+            </div>
+            <div class="algorithm-card" data-algo="insertionSort">
+                <h3>Insertion Sort</h3>
+                <p>Builds the final sorted array (or list) one item at a time. It iterates through the input elements and removes one element at a time, finds the place within the sorted array, and inserts it there.</p>
+                <p>Approach: Builds the final sorted array (or list) one item at a time. It iterates through the input elements and removes one element at a time, finds the correct position within the already sorted part, and inserts it there.</p>
+                <p>Analogy: Sorting a hand of playing cards by inserting each new card into its correct place among the already sorted cards.</p>
+            </div>
+            <div class="algorithm-card" data-algo="mergeSort">
+                <h3>Merge Sort</h3>
+                <p>A divide and conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.</p>
+                <p>Approach: A "divide and conquer" algorithm. It recursively divides the unsorted list into n sublists, each containing one element (a list of one element is considered sorted). Then, it repeatedly merges sublists to produce new sorted sublists until there is only one sorted list remaining.</p>
+                <p>Analogy: Splitting a deck of cards in half repeatedly until individual cards, then merging them back in order.</p>
+            </div>
+            <div class="algorithm-card" data-algo="quickSort">
+                <h3>Quick Sort</h3>
+                <p>Also a divide and conquer algorithm. It picks an element as a pivot and partitions the given array around the picked pivot.</p>
+                <p>Approach: Also a "divide and conquer" algorithm. It picks an element as a "pivot" and partitions the array around the pivot, placing all elements smaller than the pivot before it, and all greater elements after it. It then recursively applies the same process to the sub-arrays.</p>
+                <p>Analogy: Picking a central card and arranging other cards to its left (smaller) and right (larger), then repeating for the two new groups.</p>
+            </div>
+
+            <h2>Searching Algorithms</h2>
+            <div class="algorithm-card" data-algo="linearSearch">
+                <h3>Linear Search</h3>
+                <p>Sequentially checks each element of the list until a match is found or the whole list has been searched.</p>
+                <p>Approach: Iterates through each element of the list one by one, from the beginning to the end, comparing each element with the target value until a match is found or the entire list has been traversed.</p>
+                <p>Analogy: Looking for a specific book on a shelf by checking each book from left to right.</p>
+            </div>
+            <div class="algorithm-card" data-algo="binarySearch">
+                <h3>Binary Search</h3>
+                <p>Finds the position of a target value within a sorted array. It compares the target value to the middle element of the array.</p>
+                <p>Approach: A "divide and conquer" algorithm that efficiently finds a target value within a sorted array. It repeatedly divides the search interval in half. It compares the target value to the middle element of the interval. If the target is found, its position is returned. If the target is smaller, the search continues in the lower half; if larger, in the upper half. This process continues until the target is found or the interval becomes empty.</p>
+                <p>Analogy: Looking up a word in a dictionary by opening to the middle, then deciding if the word is in the first or second half, and repeating.</p>
+            </div>
+
+            <h2>Data Structures (Informational)</h2>
+            <div class="algorithm-card" data-algo="stack">
+                <h3>Stack</h3>
+                <p>A Last-In, First-Out (LIFO) data structure. Think of a stack of plates where you can only add or remove from the top.</p>
+            </div>
+            <div class="algorithm-card" data-algo="queue">
+                <h3>Queue</h3>
+                <p>A First-In, First-Out (FIFO) data structure. Like a line of people, the first one in is the first one out.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="visualizer-page" class="page">
+        <div class="sorting-visualizer">
+            <h2>Algorithm Visualization</h2>
+            <div class="controls">
+                <button id="generate-array">Generate New Array</button>
+                <select id="algorithm-select">
+                    <optgroup label="Sorting Algorithms">
+                        <option value="bubbleSort">Bubble Sort</option>
+                        <option value="selectionSort">Selection Sort</option>
+                        <option value="insertionSort">Insertion Sort</option>
+                        <option value="mergeSort">Merge Sort</option>
+                        <option value="quickSort">Quick Sort</option>
+                    </optgroup>
+                    <optgroup label="Searching Algorithms">
+                        <option value="linearSearch">Linear Search</option>
+                        <option value="binarySearch">Binary Search</option>
+                    </optgroup>
+                </select>
+                <div id="target-input-container" class="hidden speed-control">
+                    <label for="target-value">Target Value:</label>
+                    <input type="number" id="target-value" placeholder="Enter target">
+                </div>
+                <button id="start-sort">Start Visualization</button>
+                <div class="speed-control">
+                    <label for="speed-range">Speed:</label>
+                    <input type="range" id="speed-range" min="10" max="1000" value="200">
+                </div>
+            </div>
+            <div class="array-container" id="array-container">
+                <!-- Numbers will be rendered here -->
+            </div>
+            <div class="explanation">
+                <h3>Algorithm Explanation</h3>
+                <p id="explanation-text">Select an algorithm to see its explanation.</p>
+            </div>
+            <button class="back-button" id="back-to-home">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

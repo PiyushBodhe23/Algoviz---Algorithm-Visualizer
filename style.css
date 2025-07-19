@@ -1,0 +1,316 @@
+/* General Settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #3d0066; /* Deep violet */
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #29004d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffccff;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #ccc;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff66cc;
+}
+
+/* Pages */
+.page {
+    display: none;
+    padding: 2rem;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff0ff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e0e0ff;
+}
+
+.cta-button {
+    background: #ff66cc;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e60073;
+}
+
+/* Algorithm Cards */
+.algorithm-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.algorithm-list h2 {
+    grid-column: 1 / -1; /* Span across all columns */
+    text-align: center;
+    color: #ffccff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.algorithm-card {
+    background: #5a0099;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.algorithm-card:hover {
+    background: #7000b3;
+}
+
+.algorithm-card h3 {
+    color: #ffccff;
+    margin-bottom: 0.5rem;
+}
+
+.algorithm-card p {
+    color: #e0e0ff;
+}
+
+/* Sorting Visualizer */
+.sorting-visualizer {
+    text-align: center;
+}
+
+/* Modified for number visualization */
+.array-container {
+    display: flex;
+    align-items: center; /* Center numbers vertically */
+    justify-content: center;
+    height: 100px; /* Reduced height for numbers */
+    margin: 2rem auto; /* Center the container horizontally */
+    border: 2px dashed #b266ff;
+    padding: 1rem;
+    background: #1a0033;
+    flex-wrap: wrap; /* Allow numbers to wrap on smaller screens */
+    max-width: 90%; /* Limit width for better responsiveness */
+}
+
+/* New style for the number elements */
+.number-box {
+    background-color: #5a0099; /* Background for each number */
+    color: #ffb3ff; /* Text color of the number */
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem; /* Padding around the number */
+    margin: 0 4px; /* Space between each number */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s all ease-in-out;
+    min-width: 30px; /* Ensure a minimum width for single digits */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* States for visualization */
+.number-box.comparing {
+    background-color: #ffcc00; /* Yellow for comparison */
+    color: #333;
+}
+
+.number-box.swapping {
+    background-color: #00ff00; /* Green for swapping */
+    color: #333;
+}
+
+.number-box.sorted {
+    background-color: #66ccff; /* Light blue for sorted */
+    color: #333;
+}
+
+.number-box.found {
+    background-color: #00cc66; /* Green for found element in search */
+    color: #fff;
+    box-shadow: 0 0 15px #00cc66;
+}
+
+.number-box.not-found {
+    background-color: #ff3333; /* Red for not found element in search */
+    color: #fff;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.controls button,
+.controls select,
+.controls input[type=range],
+.controls input[type=number] { /* Added input[type=number] */
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #cc33ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    background: #9900cc;
+}
+
+select {
+    background-color: #cc33ff;
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.speed-control label {
+    color: #fff;
+}
+
+.speed-control input[type="number"] {
+    width: 100px; /* Adjust width for number input */
+    text-align: center;
+}
+
+/* Explanation Box */
+.explanation {
+    background: #330066;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 700px;
+    color: #f0e0ff;
+    text-align: left;
+}
+
+.explanation h3 {
+    margin-top: 0;
+    color: #ffccff;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: #ff3399;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: #cc0066;
+}
+
+/* Utility class */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+    .nav-links {
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .nav-links a {
+        margin-left: 0;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .algorithm-list {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .algorithm-list h2 {
+        font-size: 1.5rem;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .controls button,
+    .controls select,
+    .controls input[type=range],
+    .controls input[type=number] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .speed-control {
+        width: 100%;
+        justify-content: center;
+    }
+    .array-container {
+        padding: 0.5rem;
+    }
+    .number-box {
+        font-size: 1rem;
+        padding: 0.4rem 0.6rem;
+        margin: 2px;
+    }
+}
